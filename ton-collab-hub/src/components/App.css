@@ -5,3 +5,10 @@
   background-color: #f4f4f9;
   padding: 20px;
 }
+body {
+  background-image: url('C:\Users\Manju\Desktop\collt\CollabTON_\ton-collab-hub\src\assets\images\background.png.png'); /* Adjust path as per your project */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0; /* Optional: removes default body margin */
+}

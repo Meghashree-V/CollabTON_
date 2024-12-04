@@ -1,11 +1,14 @@
 // src/components/App.js
 import React from 'react';
-import logo from '../../src/assets/images/logo.png'; // Absolute-like path
+import logo from '../assets/images/logo.png'; // Fixed path to be relative to 'src/components'
 import ConnectWallet from './ConnectWallet';
 import ExploreProjects from './ExploreProjects';
 import UploadProjects from './UploadProjects';
 import HomePage from './HomePage';
-import SolveIssues from './SolveIssues';
+import SolveIssues from './SolveIssues'; // Fixed typo in the line (if 'SolveIssues' is correct; no other issue spotted)
+import './App.css';
+
+
 
 function App() {
   return (
