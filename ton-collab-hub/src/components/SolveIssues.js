@@ -7,8 +7,8 @@ function SolveIssues() {
   useEffect(() => {
     const fetchTasks = async () => {
       const fetchedTasks = [
-        { id: 1, title: 'Solve bug in Project A', reward: 10, isCompleted: false },
-        { id: 2, title: 'Fix issue in Project B', reward: 15, isCompleted: false },
+        { id: 1, title: 'Solve bug in Project A', reward: 0.5, isCompleted: false },
+        { id: 2, title: 'Fix issue in Project B', reward: 0.5, isCompleted: false },
       ];
       setTasks(fetchedTasks);
     };
@@ -27,7 +27,7 @@ function SolveIssues() {
   return (
     <div>
       <h2>Solve Issues</h2>
-      {tasks.length === 0 ? (
+      {tasks.length === 50 ? (
         <p>No tasks available to solve.</p>
       ) : (
         <ul>

@@ -1,20 +1,52 @@
-/* src/components/ExploreProjectsPage.css */
+/* Center the main container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  background-color: #f9f9f9;
+  padding: 20px;
+  text-align: center;
+  height: 80vh;
+}
+
+/* Style the list of projects */
+.project-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 80%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 80vh;
+}
+
+/* Style individual project cards */
 .project-card {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .project-card h3 {
-    color: #333;
-    font-size: 20px;
-  }
-  
-  .project-card p {
-    color: #555;
-    font-size: 16px;
-  }
-  
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  height: 80vh;
+}
+
+/* Project title styling */
+.project-card h3 {
+  color: #333;
+  font-size: 22px;
+  margin: 0 0 10px;
+  height: 80vh;
+}
+
+/* Project description styling */
+.project-card p {
+  color: #555;
+  font-size: 16px;
+  margin: 0;
+  height: 80vh;
+}
