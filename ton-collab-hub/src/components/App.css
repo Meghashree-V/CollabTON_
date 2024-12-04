@@ -1,14 +1,86 @@
-/* src/App.css */
-.App {
-  font-family: 'Arial', sans-serif;
-  text-align: center;
-  background-color: #f4f4f9;
-  padding: 20px;
-}
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* General Styles */
 body {
-  background-image: url('C:\Users\khush\OneDrive\Desktop\Screenshot 2024-12-04 115623.png'); /* Adjust path as per your project */
+  font-family: 'Montserrat', sans-serif; /* Updated font */
+  text-align: center;
+  background-image: url('../assets/images/background.png.png'); /* Adjusted relative path */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  margin: 0; /* Optional: removes default body margin */
+  margin: 0; /* Removes default margin for a clean layout */
+  color: white; /* Ensures text is readable on dark background */
+}
+
+/* Container Styles */
+.container {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6); /* Slightly transparent dark background */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Button Styles */
+button {
+  padding: 12px 24px;
+  background-color: #3498db;
+  color: white;
+  font-weight: 60; /* Bold font for buttons */
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #8fa29f;
+  transform: scale(1.05); /* Subtle scaling effect */
+}
+
+/* Navigation Bar */
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Centers the nav links */
+  gap: 30px;
+  margin-top: 20px;
+}
+
+nav ul li a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav ul li a:hover {
+  color: #667673;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8); /* Glow effect */
+}
+
+/* Welcome Section */
+.welcome {
+  margin-top: 120px;
+  font-size: 48px;
+  font-weight: 600; /* Bold font for emphasis */
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Adds depth */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .welcome {
+    font-size: 32px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
 }

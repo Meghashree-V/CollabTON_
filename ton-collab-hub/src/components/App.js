@@ -1,44 +1,103 @@
-// src/components/App.js
 import React from 'react';
-import logo from '../assets/images/logo.png'; // Fixed path to be relative to 'src/components'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Router components
+import logo from '../assets/images/logo.png'; // Correct logo path
 import ConnectWallet from './ConnectWallet';
 import ExploreProjects from './ExploreProjects';
 import UploadProjects from './UploadProjects';
-import HomePage from './HomePage';
-import SolveIssues from './SolveIssues'; // Fixed typo in the line (if 'SolveIssues' is correct; no other issue spotted)
+import HomePage from './HomePage'; // For the home route
+import SolveIssues from './SolveIssues';
 import './App.css';
-
-
 
 function App() {
   return (
-    <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 20px', backgroundColor: 'transparent', color: 'white' }}>
-        <div style={{ fontSize: '20px' }}>
-          <img src="logo.png" alt="Logo" style={{ height: '40px' }} />
-        </div>
-        <nav>
-          <ul style={{ listStyle: 'none', display: 'flex', gap: '20px' }}>
-            <li><a href="#upload-projects" style={{ color: 'white' }}>Upload Projects</a></li>
-            <li><a href="#explore-projects" style={{ color: 'white' }}>Explore Projects</a></li>
-            <li><a href="#solve-issues" style={{ color: 'white' }}>Solve Issues</a></li>
-          </ul>
-        </nav>
-        <div>
-          <ConnectWallet /> {/* Changed from WalletButton to ConnectWallet */}
-        </div>
-      </div>
+    <Router> {/* Router wrapper */}
+      <div>
+        {/* Navbar Section */}
+        <header
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            padding: '20px 50px',
+            backgroundColor: 'transparent', // Transparent navbar
+            position: 'absolute',
+            width: '100%',
+            top: 0,
+            zIndex: 1000,
+            color: 'white',
+          }}
+        >
+          <div style={{ fontSize: '100px', display: 'flex', alignItems: 'center', gap: '50px' }}>
+            <img src={logo} alt="Logo" style={{ height: '200px' , width:"200px" }} /> {/* Larger Logo */}
+            <span></span>
+          </div>
+          <nav>
+            <ul style={{ listStyle: 'none', display: 'flex', gap: '30px', margin: 0 }}>
+              <li>
+                <Link
+                  to="/"
+                  style={{ color: 'white', textDecoration: 'none', fontSize: '18px' }}
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/upload"
+                  style={{ color: 'white', textDecoration: 'none', fontSize: '18px' }}
+                >
+                  Upload Projects
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/explore"
+                  style={{ color: 'white', textDecoration: 'none', fontSize: '18px' }}
+                >
+                  Explore Projects
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/solve"
+                  style={{ color: 'white', textDecoration: 'none', fontSize: '18px' }}
+                >
+                  Solve Issues
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <div>
+            <button
+              style={{
+                backgroundColor: '#1abc9c',
+                border: 'none',
+                padding: '10px 20px',
+                borderRadius: '5px',
+                color: 'white',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                transition: 'background-color 0.3s',
+              }}
+              onMouseEnter={(e) => (e.target.style.backgroundColor = '#16a085')}
+              onMouseLeave={(e) => (e.target.style.backgroundColor = '#1abc9c')}
+            >
+              <ConnectWallet />
+            </button>
+          </div>
+        </header>
 
-      <div id="upload-projects">
-        <UploadProjects />
+        {/* Routes */}
+        <main style={{ marginTop: '100px' }}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/upload" element={<UploadProjects />} />
+            <Route path="/explore" element={<ExploreProjects />} />
+            <Route path="/solve" element={<SolveIssues />} />
+          </Routes>
+        </main>
       </div>
-      <div id="explore-projects">
-        <ExploreProjects />
-      </div>
-      <div id="solve-issues">
-        <SolveIssues />
-      </div>
-    </div>
+    </Router>
   );
 }
 
