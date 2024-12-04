@@ -1,3 +1,6 @@
-"scripts": {
-    "test": "blueprint test"
-}
+{
+    "scripts": {
+      "build": "blueprint build"
+    }
+  }
+  

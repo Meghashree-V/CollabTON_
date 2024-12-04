@@ -1,28 +1,41 @@
 // src/components/SolveIssues.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function SolveIssues() {
-  const [issues, setIssues] = useState([
-    { id: 1, title: 'Bug in AI Algorithm', description: 'The AI algorithm throws errors when processing large datasets.' },
-    { id: 2, title: 'UI Bug in Landing Page', description: 'The buttons on the landing page are misaligned on mobile devices.' },
-  ]);
+  const [tasks, setTasks] = useState([]);
 
-  const solveIssue = (id) => {
-    setIssues(issues.filter(issue => issue.id !== id));  // Remove the solved issue from the list
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const fetchedTasks = [
+        { id: 1, title: 'Solve bug in Project A', reward: 10, isCompleted: false },
+        { id: 2, title: 'Fix issue in Project B', reward: 15, isCompleted: false },
+      ];
+      setTasks(fetchedTasks);
+    };
+    fetchTasks();
+  }, []);
+
+  const handleAcceptTask = async (taskId) => {
+    try {
+      console.log("Accepting task with ID:", taskId);
+      // Smart contract interaction for accepting task
+    } catch (error) {
+      console.error("Error accepting task:", error);
+    }
   };
 
   return (
     <div>
       <h2>Solve Issues</h2>
-      {issues.length === 0 ? (
-        <p>There are no issues to solve right now. Check back later!</p>
+      {tasks.length === 0 ? (
+        <p>No tasks available to solve.</p>
       ) : (
         <ul>
-          {issues.map((issue) => (
-            <li key={issue.id}>
-              <h3>{issue.title}</h3>
-              <p>{issue.description}</p>
-              <button onClick={() => solveIssue(issue.id)}>Solve</button>
+          {tasks.map((task) => (
+            <li key={task.id}>
+              <h3>{task.title}</h3>
+              <p>Reward: {task.reward} TON</p>
+              <button onClick={() => handleAcceptTask(task.id)}>Accept Task</button>
             </li>
           ))}
         </ul>

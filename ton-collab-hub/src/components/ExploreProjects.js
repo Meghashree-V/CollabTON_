@@ -1,13 +1,20 @@
-import React from 'react';
+// src/components/ExploreProjects.js
+import React, { useState, useEffect } from 'react';
 
 function ExploreProjects() {
-  return (
-    <div>
-      <h2>Explore Projects</h2>
-      {/* Your project display code here */}
-    </div>
-  );
-}
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    // Fetch projects from smart contract or backend
+    const fetchProjects = async () => {
+      const fetchedProjects = [
+        { id: 1, title: 'Project A', description: 'A description of project A' },
+        { id: 2, title: 'Project B', description: 'A description of project B' },
+      ];
+      setProjects(fetchedProjects);
+    };
+    fetchProjects();
+  }, []);
 
   return (
     <div>
@@ -29,3 +36,4 @@ function ExploreProjects() {
 }
 
 export default ExploreProjects;
+
