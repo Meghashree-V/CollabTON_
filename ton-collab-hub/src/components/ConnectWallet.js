@@ -1,40 +1,14 @@
 // src/components/ConnectWallet.js
-import React, { useState } from 'react';
+import React from 'react';
 
-function ConnectWallet() {
-  const [walletAddress, setWalletAddress] = useState(null);
-
-  // Connect to TON wallet
-  const connectWallet = async () => {
-    if (window.ton && window.ton.connect) {
-      try {
-        const address = await window.ton.connect();
-        setWalletAddress(address);
-      } catch (error) {
-        console.error('Failed to connect to TON Wallet:', error);
-      }
-    } else {
-      alert('TON Wallet is not installed. Please install it to continue.');
-    }
-  };
-
-  // Disconnect the wallet
-  const disconnectWallet = () => {
-    setWalletAddress(null);
-  };
-
+const ConnectWallet = () => {
   return (
-    <div className="connect-wallet">
-      {walletAddress ? (
-        <div>
-          <p>Connected Wallet Address: {walletAddress}</p>
-          <button onClick={disconnectWallet}>Disconnect Wallet</button>
-        </div>
-      ) : (
-        <button onClick={connectWallet}>Connect Wallet</button>
-      )}
+    <div>
+      <h1>Connect Your Wallet</h1>
+      <p>To interact with this app, please connect your cryptocurrency wallet.</p>
+      {/* Add logic to integrate with wallet connection APIs (e.g., MetaMask, etc.) */}
     </div>
   );
-}
+};
 
 export default ConnectWallet;

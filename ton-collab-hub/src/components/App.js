@@ -1,8 +1,10 @@
 // src/components/App.js
 import React from 'react';
+import logo from '../../src/assets/images/logo.png'; // Absolute-like path
 import ConnectWallet from './ConnectWallet';
 import ExploreProjects from './ExploreProjects';
 import UploadProjects from './UploadProjects';
+import HomePage from './HomePage';
 import SolveIssues from './SolveIssues';
 
 function App() {
@@ -20,7 +22,7 @@ function App() {
           </ul>
         </nav>
         <div>
-          <WalletButton />
+          <ConnectWallet /> {/* Changed from WalletButton to ConnectWallet */}
         </div>
       </div>
 
