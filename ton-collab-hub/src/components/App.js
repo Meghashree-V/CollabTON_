@@ -13,7 +13,7 @@ import './App.css';
 function App() {
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 20px', backgroundColor: '#2c3e50', color: 'white' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 20px', backgroundColor: 'transparent', color: 'white' }}>
         <div style={{ fontSize: '20px' }}>
           <img src="logo.png" alt="Logo" style={{ height: '40px' }} />
         </div>
